@@ -19,6 +19,7 @@ fn another_func(x: i32, y: u32) {
     println!("another_func received i32 and u32 integer: {}, {}", x, y);
 }
 
+// Implicit return. Can also explicitly return using `return` keyword
 fn plus_one(x: i32) -> i32 {
     x + 1
 }
