@@ -23,6 +23,7 @@ fn plus_one(x: i32) -> i32 {
     x + 1
 }
 
-fn bad_plus_one(x: i32) -> i32 {
-    x + 1;
-}
+// uncomment function to produce compile error
+// fn bad_plus_one(x: i32) -> i32 {
+//     x + 1;
+// }
