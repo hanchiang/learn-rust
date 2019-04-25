@@ -1,4 +1,24 @@
+#![allow(unused_doc_comments)]
+mod references;
+
 fn main() {
+    println!("---------Ownership--------");
+    ownership();
+
+    println!("\n---------References--------------");
+    references::example();
+    // uncomment next line to produce error
+    // references::modify_reference();
+
+    references::mutable_reference();
+
+    // uncomment next line to produce error
+    // references::multi_mutable_reference();
+    
+    references::dangling_reference();
+}
+
+fn ownership() {
     value_moved();
 
     value_copied();
