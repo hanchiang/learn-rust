@@ -15,7 +15,8 @@ fn main() {
     // uncomment next line to produce error
     // references::multi_mutable_reference();
     
-    references::dangling_reference();
+    // uncomment next line to produce error
+    // references::dangling_reference();
 }
 
 fn ownership() {
