@@ -1,7 +1,7 @@
 [package]
 name = "control_flow"
 version = "0.1.0"
-authors = ["hanchiang <yaphc@hotmail.com>"]
+authors = ["han chiang <yaphc@hotmail.com>"]
 edition = "2018"
 
 [dependencies]
