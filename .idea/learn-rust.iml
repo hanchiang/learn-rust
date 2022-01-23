@@ -9,12 +9,14 @@
       <sourceFolder url="file://$MODULE_DIR$/7-packages-and-crates-restaurant/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/7-packages-and-crates/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/8-collections/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/9-error_handling/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/4-ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/5-structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/6-enums/target" />
       <excludeFolder url="file://$MODULE_DIR$/7-packages-and-crates/target" />
       <excludeFolder url="file://$MODULE_DIR$/7-packages-and-crates-restaurant/target" />
       <excludeFolder url="file://$MODULE_DIR$/8-collections/target" />
+      <excludeFolder url="file://$MODULE_DIR$/9-error_handling/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
