@@ -10,12 +10,22 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &str> {
-        if args.len() < 3 {
-            return Err("usage: cargo run <text to search> <file name>");
-        }
-        let query = args[1].clone();
-        let filename = args[2].clone();
+    pub fn new<T>(mut args: T) -> Result<Config, &'static str>
+    where
+        T: Iterator<Item = String>
+    {
+        // First value is the name of the program
+        args.next();
+
+        let query = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string")
+        };
+
+        let filename = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file name")
+        };
 
         // If the environment variable CASE_INSENSITIVE is not set, make the search case sensitive
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
@@ -45,26 +55,11 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 // We tell Rust that the data returned by the search function will live as long as
 // the data passed into the search function in the contents argument.
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut result = Vec::new();
-
-    for line in contents.lines() {
-        if (line.contains(query)) {
-            result.push(line);
-        }
-    }
-    result
+    contents.lines().filter(|line| line.contains(query)).collect()
 }
 
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let query = query.to_lowercase();
-    let mut result = Vec::new();
-
-    for line in contents.lines() {
-        if line.to_lowercase().contains(&query) {
-            result.push(line)
-        }
-    }
-    result
+    contents.lines().filter(|line| line.to_lowercase().contains(&query.to_lowercase())).collect()
 }
 
 #[cfg(test)]
@@ -72,31 +67,38 @@ mod tests {
     use super::*;
 
     #[test]
-    #[should_panic(expected = "usage: cargo run")]
-    fn config_new_with_fewer_than_3_args_should_fail() {
+    #[should_panic(expected = "Didn't get a query string")]
+    fn config_new_without_query_should_fail() {
+        let args = vec!(String::from("program name"));
+        Config::new(args.into_iter()).unwrap();
+    }
+
+    #[test]
+    #[should_panic(expected = "Didn't get a file name")]
+    fn config_new_without_filename_should_fail() {
         let args = vec!(String::from("program name"), String::from("text"));
-        Config::new(&args).unwrap();
+        Config::new(args.into_iter()).unwrap();
     }
 
     #[test]
     fn config_new_with_3_args_should_pass() {
         let args = vec!(String::from("program name"), String::from("text"), String::from("filename"));
-        let result = Config::new(&args).unwrap();
-        assert_eq!(result, Config { query: String::from("text"), filename: String::from("filename") });
+        let result = Config::new(args.into_iter()).unwrap();
+        assert_eq!(result, Config { query: String::from("text"), filename: String::from("filename"), case_sensitive: true });
     }
 
     #[test]
     #[should_panic(expected = "NotFound")]
     fn run_with_invalid_filename_should_fail() {
         let args = vec!(String::from("program name"), String::from("text"), String::from("filename"));
-        let result = Config::new(&args).unwrap();
+        let result = Config::new(args.into_iter()).unwrap();
         run(result).unwrap();
     }
 
     #[test]
     fn run_with_valid_filename_should_pass() {
         let args = vec!(String::from("program name"), String::from("text"), String::from("poem.txt"));
-        let result = Config::new(&args).unwrap();
+        let result = Config::new(args.into_iter()).unwrap();
         let response = run(result).unwrap();
         assert_eq!(response, ());
     }

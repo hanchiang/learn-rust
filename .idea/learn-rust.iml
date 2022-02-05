@@ -14,6 +14,7 @@
       <sourceFolder url="file://$MODULE_DIR$/11-testing/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/11-testing/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/12-minigrep/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/13-iterators-and-closures/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/4-ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/5-structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/6-enums/target" />
@@ -24,6 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/10-generics-traits-lifetimes/target" />
       <excludeFolder url="file://$MODULE_DIR$/11-testing/target" />
       <excludeFolder url="file://$MODULE_DIR$/12-minigrep/target" />
+      <excludeFolder url="file://$MODULE_DIR$/13-iterators-and-closures/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

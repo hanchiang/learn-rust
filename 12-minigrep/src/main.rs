@@ -6,10 +6,8 @@ use minigrep::{Config, run};
 
 // Usage: cargo run searchstring example-filename.txt
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
     // error message is captured in the closure, i.e. |err|
-    let config = Config::new(&args).unwrap_or_else(|err| {
+    let config = Config::new(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {}", err);
         process::exit(1);
     });
