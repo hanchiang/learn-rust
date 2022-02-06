@@ -1,0 +1,10 @@
+[package]
+name = "more-about-cargo-and-crates"
+version = "0.1.0"
+edition = "2021"
+description = "Chapter 14 of the rust book"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
