@@ -18,6 +18,7 @@
       <sourceFolder url="file://$MODULE_DIR$/14-cargo-workspaces/add-one/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/14-cargo-workspaces/adder/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/14-more-about-cargo-and-crates/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/15-smart-pointers/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/4-ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/5-structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/6-enums/target" />
@@ -31,6 +32,7 @@
       <excludeFolder url="file://$MODULE_DIR$/13-iterators-and-closures/target" />
       <excludeFolder url="file://$MODULE_DIR$/14-more-about-cargo-and-crates/target" />
       <excludeFolder url="file://$MODULE_DIR$/14-cargo-workspaces/target" />
+      <excludeFolder url="file://$MODULE_DIR$/15-smart-pointers/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
