@@ -23,6 +23,7 @@
       <sourceFolder url="file://$MODULE_DIR$/17-object-oriented-programming/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/18-patterns-and-matching/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/19-advanced-features/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/20-multi-threaded-web-server/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/4-ownership/target" />
       <excludeFolder url="file://$MODULE_DIR$/5-structs/target" />
       <excludeFolder url="file://$MODULE_DIR$/6-enums/target" />
@@ -41,6 +42,7 @@
       <excludeFolder url="file://$MODULE_DIR$/17-object-oriented-programming/target" />
       <excludeFolder url="file://$MODULE_DIR$/18-patterns-and-matching/target" />
       <excludeFolder url="file://$MODULE_DIR$/19-advanced-features/target" />
+      <excludeFolder url="file://$MODULE_DIR$/20-multi-threaded-web-server/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
